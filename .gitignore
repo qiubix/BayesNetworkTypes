@@ -1,0 +1,33 @@
+# Compiled Object files
+*.slo
+*.lo
+*.o
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+
+# build directories
+build/
+dist/
+ext/
+
+# user files 
+*.user*
+
+# swap files
+*.swp
+
+# output network
+out_network.xdsl
+
+# core
+core
+
+# IntelliJ files
+.idea/
