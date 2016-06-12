@@ -8,6 +8,18 @@ SET(CMAKE_INCLUDE_CURRENT_DIR ON)
 # # Link with other libraries
 # TARGET_LINK_LIBRARIES(BayesNetworkTypes ${PCL_OCTREE_LIBRARIES})
 
+SET(lib_src BayesNetwork.cpp BayesNetworkNode.cpp CPTManager.cpp)
+ADD_LIBRARY(BayesNetworkTypes SHARED ${lib_src} BayesNetworkExceptions.hpp AbstractNetwork.hpp)
+# Link with other libraries
+TARGET_LINK_LIBRARIES(BayesNetworkTypes ${SMILE_LIBS} ${DisCODe_LIBRARIES})
+
+INSTALL(
+  TARGETS BayesNetworkTypes
+  RUNTIME DESTINATION bin COMPONENT applications
+  LIBRARY DESTINATION lib COMPONENT applications
+  ARCHIVE DESTINATION lib COMPONENT sdk
+)
+
 # Get soource files of library
 ADD_LIBRARY(OctreeTypes SHARED Octree.cpp OctreeContainers.hpp)
 # Link with other libraries
