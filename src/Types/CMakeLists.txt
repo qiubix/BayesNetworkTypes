@@ -23,7 +23,7 @@ INSTALL(
 # Get soource files of library
 ADD_LIBRARY(OctreeTypes SHARED Octree.cpp OctreeNode.cpp OctreeBranchNode.cpp OctreeLeafNode.cpp DepthFirstIterator.cpp OctreeContainers.hpp)
 # Link with other libraries
-TARGET_LINK_LIBRARIES(OctreeTypes ${PCL_OCTREE_LIBRARIES})
+TARGET_LINK_LIBRARIES(OctreeTypes ${DisCODe_LIBRARIES} ${PCL_OCTREE_LIBRARIES} ${PCL_IO_LIBRARIES})
 
 # Install library
 INSTALL(

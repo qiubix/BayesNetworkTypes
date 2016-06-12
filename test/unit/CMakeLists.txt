@@ -10,3 +10,4 @@ create_test_suite(OctreeNodeTest OctreeNodeTest.cpp OctreeTypes)
 
 create_test_suite(OctreeTest OctreeTest.cpp OctreeTypes)
 file(COPY test_cloud.pcd DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
+target_link_libraries(OctreeTest TestUtils)

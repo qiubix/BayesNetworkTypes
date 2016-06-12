@@ -226,7 +226,7 @@ TEST_F(BayesNetworkTest, shouldGetNodeProbability) {
   handle = net.FindNode("F_1");
   net.GetNode(handle)->Value()->SetEvidence(0);
   net.UpdateBeliefs();
-  network.setNetwork(net);
+  network.setNetwork(&net);
 
   double probability = network.getNodeProbability("V_0");
   ASSERT_THAT(probability, Eq(0.5));
@@ -249,7 +249,7 @@ TEST_F(BayesNetworkTest, shouldPropagateProbabilities) {
   DSL_network net = network.getNetwork();
   int handle = net.FindNode("F_0");
   net.GetNode(handle)->Value()->SetEvidence(0);
-  network.setNetwork(net);
+  network.setNetwork(&net);
   double probability = network.getNodeProbability("V_0");
   ASSERT_THAT(probability, Ne(0.5));
 
